@@ -6,30 +6,31 @@
  * Date: 20/09/2017
  * Time: 20:51
  */
-class bdd
-{
-    private $db_name;
-    private $db_user;
-    private $db_pass;
-    private $db_host;
-    private $pdo;
+class DbManager {
 
-    public function __construct($db_name,$db_user='root',$db_pass='root',$db_host = 'localhost')
-    {
-        $this->db_name = $db_name;
-        $this->db_user = $db_user;
-        $this->db_pass = $db_pass;
-        $this->db_host = $db_host;
+    //constante de classe
+    const DB_HOST = "localhost";
+    const DB_NAME = "change";
+    const DB_USER = "root";
+    const DB_PASSWORD = "";
+
+    protected static $instance = null;
+    protected $conn;
+
+    private function __construct(){
+        $dsn = "mysql:dbname=".self::DB_NAME.";host=".self::DB_HOST ;
+        $this->conn = new \PDO( $dsn, self::DB_USER, self::DB_PASSWORD);
+        $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
-    private function getPDO(){
-        if ($this->pdo === null){
-            $pdo = new PDO('mysql:host=localhost;dbname=change', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            $this->pdo = $pdo;
+    public static function getInstance(){
+        if(is_null(self::$instance)){
+            self::$instance = new DbManager();
         }
-
-        return $this->pdo;
+        return self::$instance;
     }
 
+    public function getConnection(){
+        return $this->conn;
+    }
 }
