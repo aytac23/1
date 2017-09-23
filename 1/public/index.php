@@ -5,7 +5,7 @@
  * Date: 15/09/2017
  * Time: 15:15
  */
-require "../App/bdd.php";
+require "../App/Classes/Manager/bdd.php";
 
 ?>
 <!doctype html>
@@ -99,6 +99,43 @@ require "../App/bdd.php";
         <span class="sr-only">Next</span>
     </a>
 </div><!-- /.carousel -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+
+                <form role="form" class="dvd_form_login well" action="inscription.php" method="post">
+                    <fieldset>
+                        <legend>S'inscrire</legend>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Votre email">
+                        </div>
+                        <div class="form-group">
+                            <label >Mot de passe</label>
+                            <input type="password" name="mdp" class="form-control" placeholder="Mot de passe">
+                        </div>
+                        <div class="form-group">
+                            <label >Confirmation du mot de passe</label>
+                            <input type="password" name="confirm_mdp" class="form-control" placeholder="Confirmation mot de passe">
+                        </div>
+                        <div class="form-group">
+                            <label >Nom</label>
+                            <input type="text" name="nom" class="form-control" placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" name="prenom" class="form-control" placeholder="Votre prénom">
+                        </div>
+
+                        <button type="submit" class="btn btn-warning pull-right">S'inscrire</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
