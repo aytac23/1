@@ -33,4 +33,5 @@ class DbManager {
     public function getConnection(){
         return $this->conn;
     }
+
 }

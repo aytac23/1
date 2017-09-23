@@ -5,6 +5,8 @@
  * Date: 15/09/2017
  * Time: 15:15
  */
+require "../App/bdd.php";
+
 ?>
 <!doctype html>
 <html lang="fr">
