@@ -1,5 +1,5 @@
 <?php
-
+namespace MyInterface;
 /**
  * Created by PhpStorm.
  * User: Gun

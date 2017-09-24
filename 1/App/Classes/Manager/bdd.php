@@ -1,5 +1,5 @@
 <?php
-
+namespace Manager;
 /**
  * Created by PhpStorm.
  * User: Gun

@@ -1,5 +1,5 @@
 <?php
-
+namespace Entity;
 /**
  * Created by PhpStorm.
  * User: Gun
